@@ -206,16 +206,42 @@ function mostrarFeed() {
 mostrarFeed()//carga los discos del feed
 
 //////SISTEMA DE CAPSULAS
-renderBiblioUnlogged()
+function GestionarFeed() {
+  let isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
 
-const btnHomeEl = document.querySelector('#homeButtonId')
-const btnSearchEl = document.querySelector('#searchButtonId')
-btnSearchEl.addEventListener("click", () => {
+  // Si el valor no está en localStorage, inicialízalo a false
+  if (isLoggedIn === null) {
+    isLoggedIn = false;
+    localStorage.setItem('isLoggedIn', 'false');
+  }
+  if (isLoggedIn) {
+    feedUserLogged()
+  }
+  else {
+    feedUserUnlogged()
+  }
+}
 
-  const main = document.querySelector('article.bodyOfContent')
+function feedUserLogged() {
+  renderAlbumsHeader()
+  renderBiblioLogged()
+}
 
-  main.style.opacity = "0"
-  renderSearch(btnHomeEl, main)
+function feedUserUnlogged() {
+  renderBiblioUnlogged()
+}
+
+GestionarFeed()
+
+const btnSearch = document.querySelector("#searchButtonId")
+const btnHome = document.querySelector("#homeButtonId")
+
+const auxEvents = document.querySelector("#aux-events")
+
+btnSearch.addEventListener("click", () => {
+  auxEvents.style.display = "none"
+  renderSearch(btnHome, auxEvents)
 });
+
 
 

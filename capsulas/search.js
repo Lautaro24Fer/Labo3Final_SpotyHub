@@ -1,6 +1,6 @@
 import './stylesSearch.css'
 
-export function renderSearch(btnHomeEl, main) {
+export function renderSearch(btnHome, auxEvents) {
     const punteroMain = document.querySelector('#idMain')
 
 
@@ -37,10 +37,10 @@ export function renderSearch(btnHomeEl, main) {
     
     `
 
+    btnHome.addEventListener("click", () => {
+        removeSearch(containerSearch, auxEvents)
+    });
 
-    btnHomeEl.addEventListener("click", () => {
-        removeSearch(containerSearch, main)
-    })
 
     punteroMain.appendChild(containerSearch)
 
@@ -74,7 +74,6 @@ export function renderSearch(btnHomeEl, main) {
 
     document.getElementById('buscarButton').addEventListener('click', function () {
         buscarDatos();
-
     });
 
 
@@ -218,7 +217,7 @@ export function renderSearch(btnHomeEl, main) {
 
 }
 
-function removeSearch(containerSearch, main) {
+function removeSearch(containerSearch, auxEvents) {
     containerSearch.innerHTML = ''
-    main.style.opacity = "1"
+    auxEvents.style.display = "block"
 }

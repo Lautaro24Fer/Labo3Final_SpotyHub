@@ -3,9 +3,10 @@ export function renderAlbumsHeader() {
   const container = document.querySelector('#headerTag')
   const containerElements = document.createElement("div")
 
+
   containerElements.innerHTML = `
   
-    <section class="favouritesAlbums-logged">
+    <section class="favouritesAlbums-logged" id="discosFavoritos">
     <button class="elementAlbumLogged"><a href="#" target="_blank">
       <div class="imageAlbum">
 

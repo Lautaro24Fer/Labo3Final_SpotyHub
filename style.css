@@ -88,18 +88,18 @@ section.nav ul.nav-containerItems li.nav-itemElement button{
 }
 
 
-section.nav ul.nav-containerItems li.nav-itemElement button a{
+section.nav ul.nav-containerItems li.nav-itemElement button {
   display: flex;
   gap: 1em;
 
 }
 
-section.nav ul.nav-containerItems li.nav-itemElement button a svg{
+section.nav ul.nav-containerItems li.nav-itemElement button  svg{
   height: 1.5em;
   fill: var(--color4);
 }
 
-section.nav ul.nav-containerItems li.nav-itemElement button a h6{
+section.nav ul.nav-containerItems li.nav-itemElement button h6{
   font-size: 1.5em;
   color: var(--color4)
 

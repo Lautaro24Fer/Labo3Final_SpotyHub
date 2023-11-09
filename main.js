@@ -1,6 +1,8 @@
 import { renderBiblioLogged } from "./capsulas/biblioLogged";
 import { renderAlbumsHeader } from "./capsulas/headerAlbums";
 import { renderBiblioUnlogged } from "./capsulas/biblioUnlogged";
+import { renderSearch } from "./capsulas/search";
+import { renderLogIn } from "./capsulas/login";
 
 const { VITE_API_CLIENT_ID: clientId,
   VITE_API_HOST: rapidApiHost } = import.meta.env
@@ -171,8 +173,6 @@ function mostrarFeed() {
   })
 }
 
-
-
 // async function getData(url) {
 //     const url = 'https://spotify23.p.rapidapi.com/albums/?ids=3IBcauSj5M2A6lTeffJzdv';
 //     const options = {
@@ -207,3 +207,8 @@ mostrarFeed()
 
 //////SISTEMA DE CAPSULAS
 renderBiblioUnlogged()
+
+const btnSearchEl = document.querySelector('#searchButtonId')
+btnSearchEl.addEventListener("click", () => {
+  renderSearch()
+});

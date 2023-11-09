@@ -1,3 +1,7 @@
+import { renderBiblioLogged } from "./capsulas/biblioLogged";
+import { renderAlbumsHeader } from "./capsulas/headerAlbums";
+import { renderBiblioUnlogged } from "./capsulas/biblioUnlogged";
+
 const { VITE_API_CLIENT_ID: clientId,
   VITE_API_HOST: rapidApiHost } = import.meta.env
 
@@ -200,3 +204,6 @@ function mostrarFeed() {
 // buildFeed()
 
 mostrarFeed()
+
+//////SISTEMA DE CAPSULAS
+renderBiblioUnlogged()

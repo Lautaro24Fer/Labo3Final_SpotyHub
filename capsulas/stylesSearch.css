@@ -4,6 +4,9 @@ article.containerOfSearch{
     align-items: center;
     min-height: 80vh;
     width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 article.containerOfSearch header{
@@ -16,6 +19,7 @@ article.containerOfSearch header{
 article.containerOfSearch header div.search-box{
     gap: .5em;
     display: flex;
+    padding: 3em 0 0 0;
 }
 
 article.containerOfSearch header div.search-box input {

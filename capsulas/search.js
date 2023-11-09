@@ -1,11 +1,10 @@
 import './stylesSearch.css'
 
-export function renderSearch() {
+export function renderSearch(btnHomeEl, main) {
     const punteroMain = document.querySelector('#idMain')
 
-    punteroMain.innerHTML = ''
 
-    const containerSearch = document.createElement('article')
+    var containerSearch = document.createElement('article')
     containerSearch.innerHTML = `
     
     <article class="containerOfSearch">
@@ -37,6 +36,11 @@ export function renderSearch() {
   </article>
     
     `
+
+
+    btnHomeEl.addEventListener("click", () => {
+        removeSearch(containerSearch, main)
+    })
 
     punteroMain.appendChild(containerSearch)
 
@@ -212,4 +216,9 @@ export function renderSearch() {
     // Renovación del token, no está clara su manipulación
     setInterval(obtenerNuevoToken, 50 * 60 * 1000); // Renovar cada 50 minutos
 
+}
+
+function removeSearch(containerSearch, main) {
+    containerSearch.innerHTML = ''
+    main.style.opacity = "1"
 }

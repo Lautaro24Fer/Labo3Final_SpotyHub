@@ -2,7 +2,7 @@ import { renderBiblioLogged } from "./capsulas/biblioLogged";
 import { renderAlbumsHeader } from "./capsulas/headerAlbums";
 import { renderBiblioUnlogged } from "./capsulas/biblioUnlogged";
 import { renderSearch } from "./capsulas/search";
-import { renderLogIn } from "./capsulas/login";
+
 
 const { VITE_API_CLIENT_ID: clientId,
   VITE_API_HOST: rapidApiHost } = import.meta.env
@@ -203,12 +203,19 @@ function mostrarFeed() {
 
 // buildFeed()
 
-mostrarFeed()
+mostrarFeed()//carga los discos del feed
 
 //////SISTEMA DE CAPSULAS
 renderBiblioUnlogged()
 
+const btnHomeEl = document.querySelector('#homeButtonId')
 const btnSearchEl = document.querySelector('#searchButtonId')
 btnSearchEl.addEventListener("click", () => {
-  renderSearch()
+
+  const main = document.querySelector('article.bodyOfContent')
+
+  main.style.opacity = "0"
+  renderSearch(btnHomeEl, main)
 });
+
+

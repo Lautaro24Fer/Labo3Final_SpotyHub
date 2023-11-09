@@ -317,6 +317,7 @@ main.mainContent {
   padding: 1em;
   color: var(--color5);
   overflow-x: auto;
+  position: relative;
 }
 
 main.mainContent::-webkit-scrollbar{

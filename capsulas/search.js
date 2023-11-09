@@ -1,4 +1,4 @@
-import './stylesLogin.css'
+import './stylesSearch.css'
 
 export function renderSearch() {
     const punteroMain = document.querySelector('#idMain')

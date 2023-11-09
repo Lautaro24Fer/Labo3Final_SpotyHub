@@ -1,72 +1,71 @@
-
-:root {
-    --color1: rgb(0, 0, 0);
-    --color2: rgb(22, 22, 22);
-    --color3: rgb(45, 45, 45);
-    --color4: rgb(91, 91, 91);
-    --color5: rgb(238, 238, 238);
-    --color6: rgb(28, 28, 28);
-  }
-  
-
-main.mainContent {
-  
-    border-radius: 1em;
-    padding: 1em;
-    color: var(--color5);
-    overflow-x: auto;
-  }
-  
-  main.mainContent::-webkit-scrollbar{
-    background-color: transparent;
-  }
-  
-  main.mainContent::-webkit-scrollbar-thumb{
-    background-color: transparent;
-    opacity: 0;
-    transition: all .2s ease-in-out;
-  }
-  
-  main.mainContent:hover::-webkit-scrollbar-thumb{
-    background-color: var(--color3);
-    opacity: 1;
-    border-radius: 2em;
-    width: 2em;
-    transition: all .2s ease-in-out;
-  }
-  
-  main.mainContent header h1{
-    font-size: 2em;
-  }
-  
-  main.mainContent article.bodyOfContent {
-    padding: 3em 0 0 0;
+article.containerOfSearch{
     display: flex;
     flex-direction: column;
-    gap: 1em;
-  }
-  
-  main.mainContent article.bodyOfContent section {
+    align-items: center;
+    min-height: 80vh;
     width: 100%;
-  }
-  
-  main.mainContent article.bodyOfContent section div.containerElements {
+}
+
+article.containerOfSearch header{
+    width: 100%;
     display: flex;
-    gap: 2em;
-    flex-wrap: nowrap;
-    overflow-x: scroll;
-    margin: 0 0 0 0;
-    padding: 2em 0 1em 0;
-  }
-  
-  @media (width >=1275px) {
-    main.mainContent article.bodyOfContent section div.containerElements {
-      justify-content: space-around;
-      overflow: hidden;
-    }
-  }
-  
-  main.mainContent article.bodyOfContent section div.containerElements article.element {
+    flex-direction: column;
+    align-items: center;
+}
+
+article.containerOfSearch header div.search-box{
+    gap: .5em;
+    display: flex;
+}
+
+article.containerOfSearch header div.search-box input {
+    height: 3em;
+    width: 30em;
+    background-color: rgb(77, 77, 77);
+    border: none;
+    border-radius: 3em;
+    padding: .6em;
+    color: #fff;
+}
+
+article.containerOfSearch header div.search-box button{
+    border-radius: 1.2em;
+    padding: .5em 1.2em;
+    background-color: rgb(61, 206, 61);
+    color: white;
+    border: none;
+}
+
+article.containerOfSearch div#botonesTipos{
+    display: flex;
+    padding: 1em .5em;
+    justify-content: space-around;
+}
+
+article.containerOfSearch div#botonesTipos button{
+    background-color: rgb(139, 134, 134);
+    border-radius: 1em;
+    padding: .5em;
+    color: #fff;
+    border: none;
+}
+
+article.containerOfSearch section.fromSpotify{
+    display: flex;
+    flex-direction: column;
+}
+
+article.containerOfSearch section.fromSpotify div.containerElements{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 1em;
+    padding: 3em 0 0 0;
+}
+
+
+article.containerOfSearch section.fromSpotify div.containerElements article.element {
     background-color: var(--color6);
     padding: 1em 1em 1.5em 1em;
     border-radius: 1em;
@@ -74,316 +73,10 @@ main.mainContent {
     flex-direction: column;
     width: max-content;
     gap: 1em;
-    width: 11em;
-    position: relative;
     transition: all .2s ease-in-out;
   }
   
-  main.mainContent article.bodyOfContent section div.containerElements article.element:hover{
-    background-color: var(--color3);
+  article.containerOfSearch section.fromSpotify div.containerElements article.element .img img{
+    height: 8em;
+    width: 8em;
   }
-  
-  main.mainContent article.bodyOfContent section div.containerElements article.element button.goToSpotifyBtn{
-    background-color: rgb(83, 255, 83);
-    height: 3.5em;
-    width: 3.5em;
-    border-radius: 50%;
-    border: none;
-    display: grid;
-    place-items: center;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    margin: 0 1em 4em 0;
-    opacity: 0;
-    transition: all .1s ease-in;
-    box-shadow: -1px 8px 22px -5px rgba(0,0,0,0.75);
-  -webkit-box-shadow: -1px 8px 22px -5px rgba(0,0,0,0.75);
-  -moz-box-shadow: -1px 8px 22px -5px rgba(0,0,0,0.75);
-  }
-  
-  main.mainContent article.bodyOfContent section div.containerElements article.element button.goToSpotifyBtn:hover{
-    transition: all .1s ease-in;
-    height: 3.8em;
-    width: 3.8em;
-    margin: 0 1.3em 4.3em 0;
-    display: grid;
-    place-items: center;
-  }
-  
-  main.mainContent article.bodyOfContent section div.containerElements article.element button.goToSpotifyBtn svg{
-    height: 1.5em;
-  }
-  
-  main.mainContent article.bodyOfContent section div.containerElements article.element div.img {
-    height: 9em;
-    width: 9em;
-    background-color: var(--color1);
-  }
-  
-  main.mainContent article.bodyOfContent section div.containerElements article.element div.img img {
-    object-fit: cover;
-    height: 9em;
-    width: 9em;
-  }
-  
-  main.mainContent article.bodyOfContent section div.containerElements article.element h3.nombre {
-    width: 100%;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    font-size: 1em;
-  }
-  
-  main.mainContent article.bodyOfContent section div.containerElements article.element div.artista {
-    width: 100%;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    color: var(--color4);
-  }
-  
-  /*footer*/
-  
-  
-  /*fin de main*/
-  
-  main.search-box {
-    display: flex;
-    flex-direction:initial;
-    align-items: center;
-    padding: 20px 0;
-  }
-  
-  main.input[type="text"],
-  select {
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #fff;
-    border-radius: 4px;
-    background-color: #fff;
-    color: #000;
-  }
-  
-  
-  
-  main.button:hover {
-    background-color: #ccc;
-  }
-  
-  .results-container {
-    display: flex;
-    align-items: center;
-    margin: 5px 0;
-    padding: 10px;
-    border-radius: 5px;
-    width: 30vh;
-    height: 40vh;
-    background-color: #4b4b4b;
-  }
-  
-  main.result-img {
-    width: 50px;
-    width: 40vh;
-    height: 40vh;
-    border-radius: 20%;
-  }
-  
-  main.result-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-  
-  }
-  
-  main.result-name {
-    margin: 0 0 5px;
-    font-size: 1.6em;
-  }
-  
-  main.result-artists {
-    margin: 0;
-    font-size: 0.9em;
-    color: #777;
-  }
-  
-  main.tipo-btn {
-    padding: 8px 16px;
-    margin-right: 8px;
-    background-color: #747474;
-    cursor: pointer;
-  }
-  
-  main.tipo-btn.tipo-activo {
-    background-color: #ffffff;
-    color: rgb(0, 0, 0);
-    border: 1px solid #007bff;
-  
-  }
-  
-  main.result-name {
-    font-weight: bold;
-    margin: 0;
-    color: #f0f0f0;
-    text-decoration: none;
-  }
-  
-  main.result-type {
-    color: #888;
-    margin: 0;
-  }
-  
-  /* Estilo nuevo */
-  
-  main.result-img {
-    width: 150px;
-    height: 150px;
-    border-radius: 10%;
-    margin-bottom: 15px;
-  }
-  
-  #searchContainer {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-  }
-  
-  
-  main.discoElementSpotify {
-    background-color: #000;
-    padding: 20px;
-    border-radius: 10px;
-    color: #fff;
-    text-align: center;
-    width: 200px;
-    height: 250px;
-    align-items: center;
-  
-  }
-  
-  main.discoElementSpotify .img {
-    margin: 0 auto;
-  }
-  
-  main.discoElementSpotify .text {
-    margin-top: 15px;
-  }
-  
-  main.discoElementSpotify .nombre {
-    font-size: 1.2em;
-  }
-  
-  main.discoElementSpotify .artista {
-    color: #999;
-    font-size: 0.9em;
-  }
-  
-  main.discoElementSpotify .nombre,
-  main.discoElementSpotify .artista {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    max-width: 150px; /* Tamaño máximo para el texto */
-  }
-  main.search-box {
-    display: flex;
-    align-items: center;
-    /*background-color: #282828;*/
-    padding: 20px;
-  }
-  
-  #barraBusqueda {
-    width: 80%;
-    padding: 15px;
-    border: none;
-    border-radius: 20px;
-    background-color: #1e1e1e;
-    color: #fff;
-    max-width: 75%;
-  }
-  
-  .tipo-btn {
-    background: transparent;
-    border: none;
-    color: #fff;
-    cursor: pointer;
-    padding: 8px 16px;
-    border-radius: 4px;
-    transition: background-color 0.3s;
-  }
-  
-  .tipo-btn.tipo-activo {
-    background-color: #1db954;
-  }
-  #buscarButton {
-    padding: 8px 16px;
-    border: none;
-    background-color: #1db954;
-    color: #fff;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    border-radius: 40px;
-  }
-  
-  #buscarButton:hover {
-    background-color: #1ed760;
-  }
-  .search-container {
-    display: flex;
-    flex-direction: column;
-  
-    margin-top: 0;
-  }
-  
-  #botonesTipos {
-    display: flex;
-    gap: 10px;
-    margin-top: 1rem;
-  
-  }
-  
-  
-  .tipo-btn:hover {
-    background-color: #ddd;
-  }
-  .tipo-btn {
-    padding: px 16px;
-    border: none;
-    background-color: #ccc;
-  
-    cursor: pointer;
-    transition: background-color 0.3s;
-    border-radius: 40px;
-  }
-  .text-result{
-    margin-top: 1rem;
-  }
-  .tipo-btn:hover {
-    background-color: #ddd;
-  }
-  
-  /* Para pantallas más pequeñas, se aplica un diseño diferente */
-  @media (max-width: 768px) {
-    .search-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-    }
-  
-    #botonesTipos {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-  
-    .tipo-btn {
-      margin: 5px;
-      width: 80px; /* Ajusta el ancho de los botones según tu preferencia */
-      text-align: center;
-    }
-}

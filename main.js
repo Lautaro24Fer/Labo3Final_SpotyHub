@@ -206,6 +206,8 @@ function mostrarFeed() {
 mostrarFeed()//carga los discos del feed
 
 //////SISTEMA DE CAPSULAS
+
+const cerrarSesionbtn = document.querySelector("#cerrarSesionBtn")
 function GestionarFeed() {
   let isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
 
@@ -216,10 +218,13 @@ function GestionarFeed() {
   }
   if (isLoggedIn) {
     feedUserLogged()
+
   }
   else {
     feedUserUnlogged()
+    cerrarSesionbtn.style.display = "none"
   }
+
 }
 
 function feedUserLogged() {

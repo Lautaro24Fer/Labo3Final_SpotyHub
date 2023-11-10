@@ -122,7 +122,11 @@ export function renderAlbumsHeader() {
 
   container.appendChild(containerElements)
 
+  const cerrarSesionbtn = document.querySelector("#cerrarSesionBtn")
 
+  cerrarSesionbtn.addEventListener("click", () => {
+    containerElements.innerHTML = ''
+  });
 }
 
 

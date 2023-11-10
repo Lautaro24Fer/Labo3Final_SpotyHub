@@ -227,6 +227,17 @@ section.biblio div.biblio-main section.favouritesAlbums-logged-column button.ele
 color: var(--color4);
 }
 
+section.biblio button#cerrarSesionBtn{
+  background-color: red;
+  color: white;
+  border-radius: 1em;
+  width: 10em;
+  padding: 1em;
+  margin: 2em 0 0 0;
+  border: none;
+  font-weight: bolder;
+}
+
 /*--fin logged*/
 
 section.biblio div.biblio-main div.biblioCard{

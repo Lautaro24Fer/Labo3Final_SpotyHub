@@ -51,11 +51,20 @@ export function renderLogIn() {
     renderBiblioUnlogged()
   });
 
+  const cerrarSesionbtn = document.querySelector("#cerrarSesionBtn")
+
+  cerrarSesionbtn.addEventListener("click", () => {
+    loginHtml.innerHTML = ''
+    renderBiblioUnlogged()
+    cerrarSesionbtn.style.display = "none"
+  });
+
   btnIniciarSesion.addEventListener("click", () => {
     if (userName === `${userNameEl.value}` && password === `${userPasswordEl.value}`) {
       loginHtml.innerHTML = ''
       renderBiblioLogged()
       renderAlbumsHeader()
+      cerrarSesionbtn.style.display = "block"
     }
   });
 
